@@ -1,0 +1,42 @@
+
+  <%= form_for(employee) do |f| %>
+    <% if employee.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+  
+        <ul>
+        <% employee.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="form-group field">
+      <%= f.label :name %>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Name" <%= f.text_field :name %> 
+    </div>
+  
+    <div class="form-group field">
+      <%= f.label :email %>
+      <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" <%= f.text_field :email %> 
+    </div>
+  
+    <div class="form-group field">
+      <%= f.label :location %>
+      <select class="form-control" <%= f.text_field :location %> >
+        <option>-Select a Location-</option>
+        <option>Provo</option>
+        <option>Orem</option>
+        <option>Salt Lake</option>
+        <option>Logan</option>
+        <option>Lehi</option>
+      </select>
+    </div>
+    
+  
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+

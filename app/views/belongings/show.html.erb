@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></h3>
+
+<h1>Item Information</h1></br>
+<h3>
+  <strong>Name:</strong>
+  <%= @belonging.name %>
+</h3>
+
+<h3>
+  <strong>Location:</strong>
+  <%= @belonging.location %>
+</h3>
+
+<h3>
+  <strong>Organization:</strong>
+  <%= @belonging.organization %>
+</h3>
+
+<h3>
+  <strong>Manufacturer:</strong>
+  <%= @belonging.manufacturer %>
+</h3>
+
+<h3>
+  <strong>Part:</strong>
+  <%= @belonging.part %>
+</h3>
+
+<h3>
+  <strong>Description:</strong>
+  <%= @belonging.description %>
+</h3>
+
+<h3>
+  <strong>Month:</strong>
+  <%= @belonging.month %>
+</h3>
+
+<h3>
+  <strong>Year:</strong>
+  <%= @belonging.year %>
+</h3>
+
+<h3>
+  <strong>Notes:</strong>
+  <%= @belonging.notes %>
+</h3>
+
+<h3>
+  <strong>Employee:</strong>
+  <td><%= Employee.find(@belonging.employee_id).name %></td>
+</h3>
+
+<%= link_to 'Edit', edit_belonging_path(@belonging) %> |
+<%= link_to 'Back', belongings_path %>

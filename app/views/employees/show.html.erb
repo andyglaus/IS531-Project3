@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Employee Information</h1></br>
+<h3>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</h3>
+
+<h3>
+  <strong>Email:</strong>
+  <%= @employee.email %>
+</h3>
+
+<h3>
+  <strong>Location:</strong>
+  <%= @employee.location %>
+</h3>
+
+<h3>
+  <strong>Assigned Items:</strong>
+  <% if Belonging.where(:employee_id => @employee.id).blank? %>
+  <% else %>
+    <td><%= Belonging.where(:employee_id => @employee.id).all.map{|b| b.name} %></td>
+  <% end %>
+</h3><br>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>
